@@ -129,7 +129,7 @@ async function fetchMedline() {
     // input
     try {
       form.value.fullscreenLoading = true;
-      const res = await fetch('http://127.0.0.1:5000/api/search', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ symptom: form.value.symptom, searchType: '1' })
@@ -153,7 +153,7 @@ async function fetchMedline() {
     try {
       form.value.fullscreenLoading = true;
       let diseaseType = matchDisease(form.value.diseaseType);
-      const res = await fetch('http://127.0.0.1:5000/api/search', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ symptom: diseaseType, searchType: '2' })
