@@ -9,7 +9,15 @@ import time  # 时间相关操作
 from datetime import datetime  # 日期时间处理
 
 app = Flask(__name__)  # 创建 Flask 应用实例
-CORS(app)  # 启用 CORS 支持，允许前端跨域访问
+
+# 把你从 Vercel 拿到的前端地址填在这里
+FRONTEND_URL = "https://intelligent-symptom-inquiry-and-dec.vercel.app/" 
+
+# 允许 Vercel 和你本地开发时访问
+CORS(app, origins=[FRONTEND_URL, "http://localhost:5173", "http://localhost:8080"])
+
+# 或者，如果你想简单点，但只允许你的 API 路径被跨域：
+# CORS(app, resources={r"/api/*": {"origins": [FRONTEND_URL, "http://localhost:5173"]}})
 
 """
 简单内存缓存，结构如下：
