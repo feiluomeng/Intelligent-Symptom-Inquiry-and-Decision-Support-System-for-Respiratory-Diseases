@@ -151,7 +151,6 @@ async function fetchMedline() {
   } else {
     // options
     try {
-    debugger
       form.value.fullscreenLoading = true;
       let diseaseType = matchDisease(form.value.diseaseType);
       const res = await fetch('http://127.0.0.1:5000/api/search', {
