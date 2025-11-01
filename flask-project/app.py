@@ -11,7 +11,7 @@ from datetime import datetime  # 日期时间处理
 app = Flask(__name__)  # 创建 Flask 应用实例
 
 # 把你从 Vercel 拿到的前端地址填在这里
-FRONTEND_URL = "https://intelligent-symptom-inquiry-and-dec.vercel.app/" 
+FRONTEND_URL = "https://intelligent-symptom-inquiry-and-dec.vercel.app" 
 
 # 允许 Vercel 和你本地开发时访问
 CORS(app, origins=[FRONTEND_URL, "http://localhost:5173", "http://localhost:8080"])
